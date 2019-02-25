@@ -13,7 +13,7 @@ eureka:
     service-url:
       defaultZone: http://www.eureka7001.com:7001/eureka
   instance:
-    prefer-ip-address: true #显示客户端真实ip
+    prefer-ip-address: true #显示真实客户端
 
 ---
 spring:
