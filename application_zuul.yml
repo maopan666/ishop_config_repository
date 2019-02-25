@@ -14,6 +14,12 @@ eureka:
       defaultZone: http://www.eureka7001.com:7001/eureka  #告诉服务提供者要把服务注册到哪儿 #单机环境
   instance:
     prefer-ip-address: true #显示客户端真实ip
+zuul:
+  routes:
+    aigouEmployee.serviceId: employee-provider
+    aigouEmployee.path: /employee/**  # 匹配 /xxx开头的请求映射到user-provider服务上
+  ignored-services: "*" #user-provider #忽略直接使用服务名访问  *忽略所有的
+prefix: /ishop   # 访问前缀
 
 ---
 spring:
@@ -27,4 +33,10 @@ eureka:
     service-url:
       defaultZone: http://www.eureka7001.com:7001/eureka  #告诉服务提供者要把服务注册到哪儿 #单机环境
   instance:
-prefer-ip-address: true #显示客户端真实ip
+    prefer-ip-address: true #显示客户端真实ip
+zuul:
+  routes:
+    aigouEmployee.serviceId: employee-provider
+    aigouEmployee.path: /employee/**  # 匹配 /xxx开头的请求映射到user-provider服务上
+  ignored-services: "*" #user-provider #忽略直接使用服务名访问  *忽略所有的
+prefix: /ishop   # 访问前缀
