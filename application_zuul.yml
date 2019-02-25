@@ -1,0 +1,30 @@
+spring:
+  profiles:
+    active: dev
+---
+spring:
+  profiles: dev
+  application:
+    name: MICROSERVICE-ZUUL-GATEWAY
+server:
+  port: 9527
+eureka:
+  client:
+    service-url:
+      defaultZone: http://www.eureka7001.com:7001/eureka  #告诉服务提供者要把服务注册到哪儿 #单机环境
+  instance:
+    prefer-ip-address: true #显示客户端真实ip
+
+---
+spring:
+  profiles: test
+  application:
+    name:  MICROSERVICE-ZUUL-GATEWAY-TEST
+server:
+  port: 9528
+eureka:
+  client:
+    service-url:
+      defaultZone: http://www.eureka7001.com:7001/eureka  #告诉服务提供者要把服务注册到哪儿 #单机环境
+  instance:
+prefer-ip-address: true #显示客户端真实ip
